@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001233456780000000A /* CosmicCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001233456780000001A /* CosmicCalendarApp.swift */; };
+		A1000002233456780000000A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002233456780000001A /* AppState.swift */; };
+		A1000003233456780000000A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003233456780000001A /* User.swift */; };
+		A1000004233456780000000A /* BirthChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004233456780000001A /* BirthChart.swift */; };
+		A1000005233456780000000A /* CosmicDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005233456780000001A /* CosmicDay.swift */; };
+		A1000006233456780000000A /* PlanetaryPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006233456780000001A /* PlanetaryPosition.swift */; };
+		A1000007233456780000000A /* CosmicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007233456780000001A /* CosmicEvent.swift */; };
+		A1000008233456780000000A /* EphemerisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008233456780000001A /* EphemerisService.swift */; };
+		A1000009233456780000000A /* CosmicScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000009233456780000001A /* CosmicScoreCalculator.swift */; };
+		A1000010233456780000000A /* RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010233456780000001A /* RecommendationEngine.swift */; };
+		A1000011233456780000000A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011233456780000001A /* NotificationService.swift */; };
+		A1000012233456780000000A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012233456780000001A /* WelcomeView.swift */; };
+		A1000013233456780000000A /* BirthDataInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000013233456780000001A /* BirthDataInputView.swift */; };
+		A1000014233456780000000A /* ChartRevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000014233456780000001A /* ChartRevealView.swift */; };
+		A1000015233456780000000A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000015233456780000001A /* CalendarView.swift */; };
+		A1000016233456780000000A /* DayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000016233456780000001A /* DayDetailView.swift */; };
+		A1000017233456780000000A /* CosmicScoreIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000017233456780000001A /* CosmicScoreIndicator.swift */; };
+		A1000018233456780000000A /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000018233456780000001A /* TodayView.swift */; };
+		A1000019233456780000000A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000019233456780000001A /* SettingsView.swift */; };
+		A1000020233456780000000A /* NotificationPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000020233456780000001A /* NotificationPreferencesView.swift */; };
+		A1000021233456780000000A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000021233456780000001A /* Colors.swift */; };
+		A1000022233456780000000A /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000022233456780000001A /* Typography.swift */; };
+		A1000023233456780000000A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000023233456780000001A /* Components.swift */; };
+		A1000024233456780000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000024233456780000001A /* Assets.xcassets */; };
+		A1000025233456780000000A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000025233456780000001A /* Preview Assets.xcassets */; };
+		A1000027233456780000000A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000027233456780000001A /* ContentView.swift */; };
+		A1000028233456780000000A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000028233456780000001A /* LocationService.swift */; };
+		A1000029233456780000000A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000029233456780000001A /* MainTabView.swift */; };
+		A2000001233456780000000A /* CosmicScoreCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001233456780000001A /* CosmicScoreCalculatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2000002233456780000001A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10000F8233456780000001A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10000FF233456780000001A;
+			remoteInfo = CosmicCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1000000233456780000001A /* CosmicCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmicCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000001233456780000001A /* CosmicCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicCalendarApp.swift; sourceTree = "<group>"; };
+		A1000002233456780000001A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A1000003233456780000001A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A1000004233456780000001A /* BirthChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthChart.swift; sourceTree = "<group>"; };
+		A1000005233456780000001A /* CosmicDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicDay.swift; sourceTree = "<group>"; };
+		A1000006233456780000001A /* PlanetaryPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetaryPosition.swift; sourceTree = "<group>"; };
+		A1000007233456780000001A /* CosmicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicEvent.swift; sourceTree = "<group>"; };
+		A1000008233456780000001A /* EphemerisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EphemerisService.swift; sourceTree = "<group>"; };
+		A1000009233456780000001A /* CosmicScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicScoreCalculator.swift; sourceTree = "<group>"; };
+		A1000010233456780000001A /* RecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationEngine.swift; sourceTree = "<group>"; };
+		A1000011233456780000001A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A1000012233456780000001A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A1000013233456780000001A /* BirthDataInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDataInputView.swift; sourceTree = "<group>"; };
+		A1000014233456780000001A /* ChartRevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRevealView.swift; sourceTree = "<group>"; };
+		A1000015233456780000001A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A1000016233456780000001A /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
+		A1000017233456780000001A /* CosmicScoreIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicScoreIndicator.swift; sourceTree = "<group>"; };
+		A1000018233456780000001A /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		A1000019233456780000001A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1000020233456780000001A /* NotificationPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPreferencesView.swift; sourceTree = "<group>"; };
+		A1000021233456780000001A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A1000022233456780000001A /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		A1000023233456780000001A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		A1000024233456780000001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1000025233456780000001A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A1000027233456780000001A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A1000028233456780000001A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		A1000029233456780000001A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A2000000233456780000001A /* CosmicCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmicCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000001233456780000001A /* CosmicScoreCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicScoreCalculatorTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000FD233456780000001A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2000003233456780000001A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A10000F7233456780000001A = {
+			isa = PBXGroup;
+			children = (
+				A1000102233456780000001A /* CosmicCalendar */,
+				A2000010233456780000001A /* CosmicCalendarTests */,
+				A1000101233456780000001A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1000101233456780000001A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1000000233456780000001A /* CosmicCalendar.app */,
+				A2000000233456780000001A /* CosmicCalendarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2000010233456780000001A /* CosmicCalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001233456780000001A /* CosmicScoreCalculatorTests.swift */,
+			);
+			path = CosmicCalendarTests;
+			sourceTree = "<group>";
+		};
+		A1000102233456780000001A /* CosmicCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A1000103233456780000001A /* App */,
+				A1000104233456780000001A /* Models */,
+				A1000105233456780000001A /* Services */,
+				A1000106233456780000001A /* Views */,
+				A1000107233456780000001A /* Theme */,
+				A1000108233456780000001A /* Resources */,
+				A1000024233456780000001A /* Assets.xcassets */,
+				A1000109233456780000001A /* Preview Content */,
+			);
+			path = CosmicCalendar;
+			sourceTree = "<group>";
+		};
+		A1000103233456780000001A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A1000001233456780000001A /* CosmicCalendarApp.swift */,
+				A1000002233456780000001A /* AppState.swift */,
+				A1000027233456780000001A /* ContentView.swift */,
+				A1000029233456780000001A /* MainTabView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A1000104233456780000001A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1000003233456780000001A /* User.swift */,
+				A1000004233456780000001A /* BirthChart.swift */,
+				A1000005233456780000001A /* CosmicDay.swift */,
+				A1000006233456780000001A /* PlanetaryPosition.swift */,
+				A1000007233456780000001A /* CosmicEvent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1000105233456780000001A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1000008233456780000001A /* EphemerisService.swift */,
+				A1000009233456780000001A /* CosmicScoreCalculator.swift */,
+				A1000010233456780000001A /* RecommendationEngine.swift */,
+				A1000011233456780000001A /* NotificationService.swift */,
+				A1000028233456780000001A /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A1000106233456780000001A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A100010A233456780000001A /* Onboarding */,
+				A100010B233456780000001A /* Calendar */,
+				A100010C233456780000001A /* Today */,
+				A100010D233456780000001A /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A100010A233456780000001A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A1000012233456780000001A /* WelcomeView.swift */,
+				A1000013233456780000001A /* BirthDataInputView.swift */,
+				A1000014233456780000001A /* ChartRevealView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A100010B233456780000001A /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A1000015233456780000001A /* CalendarView.swift */,
+				A1000016233456780000001A /* DayDetailView.swift */,
+				A1000017233456780000001A /* CosmicScoreIndicator.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A100010C233456780000001A /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				A1000018233456780000001A /* TodayView.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		A100010D233456780000001A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1000019233456780000001A /* SettingsView.swift */,
+				A1000020233456780000001A /* NotificationPreferencesView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A1000107233456780000001A /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A1000021233456780000001A /* Colors.swift */,
+				A1000022233456780000001A /* Typography.swift */,
+				A1000023233456780000001A /* Components.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A1000108233456780000001A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A1000109233456780000001A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A1000025233456780000001A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10000FF233456780000001A /* CosmicCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000110233456780000001A /* Build configuration list for PBXNativeTarget "CosmicCalendar" */;
+			buildPhases = (
+				A10000FC233456780000001A /* Sources */,
+				A10000FD233456780000001A /* Frameworks */,
+				A10000FE233456780000001A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CosmicCalendar;
+			productName = CosmicCalendar;
+			productReference = A1000000233456780000001A /* CosmicCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A2000004233456780000001A /* CosmicCalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2000007233456780000001A /* Build configuration list for PBXNativeTarget "CosmicCalendarTests" */;
+			buildPhases = (
+				A2000005233456780000001A /* Sources */,
+				A2000003233456780000001A /* Frameworks */,
+				A2000006233456780000001A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2000008233456780000001A /* PBXTargetDependency */,
+			);
+			name = CosmicCalendarTests;
+			productName = CosmicCalendarTests;
+			productReference = A2000000233456780000001A /* CosmicCalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10000F8233456780000001A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A10000FF233456780000001A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A2000004233456780000001A = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A10000FF233456780000001A;
+					};
+				};
+			};
+			buildConfigurationList = A10000FB233456780000001A /* Build configuration list for PBXProject "CosmicCalendar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10000F7233456780000001A;
+			packageReferences = (
+			);
+			productRefGroup = A1000101233456780000001A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10000FF233456780000001A /* CosmicCalendar */,
+				A2000004233456780000001A /* CosmicCalendarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10000FE233456780000001A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000025233456780000000A /* Preview Assets.xcassets in Resources */,
+				A1000024233456780000000A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2000006233456780000001A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000FC233456780000001A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001233456780000000A /* CosmicCalendarApp.swift in Sources */,
+				A1000002233456780000000A /* AppState.swift in Sources */,
+				A1000003233456780000000A /* User.swift in Sources */,
+				A1000004233456780000000A /* BirthChart.swift in Sources */,
+				A1000005233456780000000A /* CosmicDay.swift in Sources */,
+				A1000006233456780000000A /* PlanetaryPosition.swift in Sources */,
+				A1000007233456780000000A /* CosmicEvent.swift in Sources */,
+				A1000008233456780000000A /* EphemerisService.swift in Sources */,
+				A1000009233456780000000A /* CosmicScoreCalculator.swift in Sources */,
+				A1000010233456780000000A /* RecommendationEngine.swift in Sources */,
+				A1000011233456780000000A /* NotificationService.swift in Sources */,
+				A1000012233456780000000A /* WelcomeView.swift in Sources */,
+				A1000013233456780000000A /* BirthDataInputView.swift in Sources */,
+				A1000014233456780000000A /* ChartRevealView.swift in Sources */,
+				A1000015233456780000000A /* CalendarView.swift in Sources */,
+				A1000016233456780000000A /* DayDetailView.swift in Sources */,
+				A1000017233456780000000A /* CosmicScoreIndicator.swift in Sources */,
+				A1000018233456780000000A /* TodayView.swift in Sources */,
+				A1000019233456780000000A /* SettingsView.swift in Sources */,
+				A1000020233456780000000A /* NotificationPreferencesView.swift in Sources */,
+				A1000021233456780000000A /* Colors.swift in Sources */,
+				A1000022233456780000000A /* Typography.swift in Sources */,
+				A1000023233456780000000A /* Components.swift in Sources */,
+				A1000027233456780000000A /* ContentView.swift in Sources */,
+				A1000028233456780000000A /* LocationService.swift in Sources */,
+				A1000029233456780000000A /* MainTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2000005233456780000001A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2000001233456780000000A /* CosmicScoreCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2000008233456780000001A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10000FF233456780000001A /* CosmicCalendar */;
+			targetProxy = A2000002233456780000001A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A100010E233456780000001A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A100010F233456780000001A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1000111233456780000001A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CosmicCalendar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CosmicCalendar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosmic Calendar";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to calculate accurate astrological data based on your birth place.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cosmiccalendar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1000112233456780000001A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CosmicCalendar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CosmicCalendar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cosmic Calendar";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to calculate accurate astrological data based on your birth place.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cosmiccalendar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A2000009233456780000001A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cosmiccalendar.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CosmicCalendar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CosmicCalendar";
+			};
+			name = Debug;
+		};
+		A200000A233456780000001A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cosmiccalendar.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CosmicCalendar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CosmicCalendar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A10000FB233456780000001A /* Build configuration list for PBXProject "CosmicCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A100010E233456780000001A /* Debug */,
+				A100010F233456780000001A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000110233456780000001A /* Build configuration list for PBXNativeTarget "CosmicCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000111233456780000001A /* Debug */,
+				A1000112233456780000001A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2000007233456780000001A /* Build configuration list for PBXNativeTarget "CosmicCalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2000009233456780000001A /* Debug */,
+				A200000A233456780000001A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = A10000F8233456780000001A /* Project object */;
+}
