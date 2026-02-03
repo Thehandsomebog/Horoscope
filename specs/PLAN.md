@@ -12,7 +12,7 @@
 | Phase 1: Core MVP | Complete | 100% |
 | Phase 2: Polish & UX | In Progress | 20% |
 | Phase 3: App Store Prep | Not Started | 0% |
-| Phase 4: Testing | In Progress | 25% |
+| Phase 4: Testing | In Progress | 40% |
 | Phase 5: Launch | Not Started | 0% |
 
 ---
@@ -106,7 +106,7 @@ All core functionality is implemented and working.
 
 ### Unit Tests
 - [x] Test CosmicScoreCalculator (35 tests covering score clamping, moon phases, retrogrades, domains, aspects)
-- [ ] Test EphemerisService calculations
+- [x] Test EphemerisService calculations (72 tests covering Julian Day conversion, planetary positions, moon phases, retrogrades, aspects, birth charts, zodiac signs)
 - [ ] Test RecommendationEngine
 - [ ] Test User model
 - [ ] Test date/timezone handling
