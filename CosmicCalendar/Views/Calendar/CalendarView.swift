@@ -67,12 +67,14 @@ struct CalendarView: View {
                     .foregroundColor(CosmicColors.primary)
                     .frame(width: 44, height: 44)
             }
+            .accessibilityLabel("Previous month")
 
             Spacer()
 
             Text(monthYearString(from: currentMonth))
                 .font(CosmicTypography.title2)
                 .foregroundColor(CosmicColors.text)
+                .accessibilityAddTraits(.isHeader)
 
             Spacer()
 
@@ -86,6 +88,7 @@ struct CalendarView: View {
                     .foregroundColor(CosmicColors.primary)
                     .frame(width: 44, height: 44)
             }
+            .accessibilityLabel("Next month")
         }
         .padding(.horizontal, 8)
     }
@@ -95,8 +98,9 @@ struct CalendarView: View {
             ForEach(calendar.shortWeekdaySymbols, id: \.self) { day in
                 Text(day.prefix(2).uppercased())
                     .font(CosmicTypography.caption)
-                    .foregroundColor(CosmicColors.text.opacity(0.6))
+                    .foregroundColor(CosmicColors.textSecondary)
                     .frame(maxWidth: .infinity)
+                    .accessibilityHidden(true) // Days are read with each cell
             }
         }
     }
@@ -136,7 +140,7 @@ struct CalendarView: View {
 
                         Text(day.scoreCategory.description)
                             .font(CosmicTypography.caption)
-                            .foregroundColor(CosmicColors.text.opacity(0.7))
+                            .foregroundColor(CosmicColors.textSecondary)
                     }
 
                     Spacer()
@@ -157,9 +161,11 @@ struct CalendarView: View {
                         Text("View Full Report")
                             .font(CosmicTypography.subheadline)
                         Image(systemName: "arrow.right")
+                            .accessibilityHidden(true)
                     }
                     .foregroundColor(CosmicColors.primary)
                 }
+                .accessibilityHint("Opens detailed cosmic report for this day")
             }
         }
     }
@@ -237,6 +243,23 @@ struct CalendarDayCell: View {
 
     private let calendar = Calendar.current
 
+    private var scoreCategory: String {
+        guard let day = cosmicDay else { return "" }
+        switch day.overallScore {
+        case 8.5...10: return ", excellent cosmic energy"
+        case 7...8.49: return ", good cosmic energy"
+        case 5...6.99: return ", neutral cosmic energy"
+        case 3...4.99: return ", challenging cosmic energy"
+        default: return ", difficult cosmic energy"
+        }
+    }
+
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        return formatter
+    }
+
     var body: some View {
         VStack(spacing: 4) {
             Text("\(calendar.component(.day, from: date))")
@@ -247,6 +270,7 @@ struct CalendarDayCell: View {
                 Circle()
                     .fill(CosmicColors.scoreColor(for: day.overallScore))
                     .frame(width: 8, height: 8)
+                    .accessibilityHidden(true) // Score is announced with cell
             }
         }
         .frame(height: 52)
@@ -259,6 +283,10 @@ struct CalendarDayCell: View {
             RoundedRectangle(cornerRadius: 12)
                 .strokeBorder(isToday ? CosmicColors.primary : .clear, lineWidth: 2)
         )
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(dateFormatter.string(from: date))\(isToday ? ", today" : "")\(scoreCategory)")
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
+        .accessibilityHint("Double tap to view cosmic report")
     }
 
     private var textColor: Color {
@@ -285,11 +313,14 @@ struct MiniDomainScore: View {
             Image(systemName: domain.icon)
                 .font(.system(size: 16))
                 .foregroundColor(CosmicColors.scoreColor(for: score))
+                .accessibilityHidden(true)
 
             Text(String(format: "%.1f", score))
                 .font(CosmicTypography.caption)
                 .foregroundColor(CosmicColors.text)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(domain.rawValue): \(String(format: "%.1f", score))")
     }
 }
 

@@ -37,11 +37,13 @@ struct CosmicScoreIndicator: View {
                     if showLabel {
                         Text("Cosmic Score")
                             .font(CosmicTypography.caption)
-                            .foregroundColor(CosmicColors.text.opacity(0.6))
+                            .foregroundColor(CosmicColors.textSecondary)
                     }
                 }
             }
             .frame(width: size, height: size)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Cosmic Score: \(String(format: "%.1f", score)) out of 10")
         }
         .onAppear {
             withAnimation(.spring(duration: 1.0, bounce: 0.3)) {
@@ -79,6 +81,8 @@ struct CosmicScoreRing: View {
                 .foregroundColor(CosmicColors.scoreColor(for: score))
         }
         .frame(width: size, height: size)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Score: \(String(format: "%.0f", score)) out of 10")
     }
 }
 
@@ -91,6 +95,7 @@ struct ScoreProgressBar: View {
             HStack {
                 Image(systemName: domain.icon)
                     .foregroundColor(CosmicColors.accent)
+                    .accessibilityHidden(true)
 
                 Text(domain.rawValue)
                     .font(CosmicTypography.subheadline)
@@ -115,7 +120,10 @@ struct ScoreProgressBar: View {
                 }
             }
             .frame(height: 8)
+            .accessibilityHidden(true)
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(domain.rawValue): \(String(format: "%.1f", score)) out of 10")
     }
 }
 
@@ -158,11 +166,25 @@ struct TrendIndicator: View {
         HStack(spacing: 4) {
             Image(systemName: trend.icon)
                 .font(.caption)
+                .accessibilityHidden(true)
 
             Text(trendText)
                 .font(CosmicTypography.caption)
         }
         .foregroundColor(trend.color)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(trendAccessibilityLabel)
+    }
+
+    private var trendAccessibilityLabel: String {
+        switch trend {
+        case .up:
+            return "Trending up by \(String(format: "%.1f", abs(currentScore - previousScore))) points"
+        case .down:
+            return "Trending down by \(String(format: "%.1f", abs(currentScore - previousScore))) points"
+        case .stable:
+            return "Score is stable"
+        }
     }
 
     private var trendText: String {

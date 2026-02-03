@@ -1,31 +1,45 @@
 import SwiftUI
 
 struct CosmicColors {
-    static let primary = Color(hex: "E8B4BC")
+    // MARK: - Primary Palette
+    static let primary = Color(hex: "D4939E")       // Darker rose for better contrast
     static let secondary = Color(hex: "FFF5E6")
-    static let accent = Color(hex: "C4A4C4")
+    static let accent = Color(hex: "9B7A9B")        // Darker lavender for better contrast
     static let background = Color(hex: "FFFAF5")
     static let text = Color(hex: "4A4045")
-    static let cosmicGold = Color(hex: "D4AF37")
 
-    static let softRose = Color(hex: "E8B4BC")
+    // MARK: - Text Colors with WCAG Compliant Contrast
+    /// Secondary text color - meets WCAG AA contrast ratio (4.5:1) on white/background
+    static let textSecondary = Color(hex: "6B5F64") // Darker than opacity(0.7) for better contrast
+
+    /// Tertiary text color - for less important information
+    static let textTertiary = Color(hex: "7A6E73")  // Slightly lighter but still meets AA
+
+    // MARK: - Decorative Colors (Use with caution for text)
+    static let cosmicGold = Color(hex: "B8941F")    // Darker gold for better contrast
+
+    // Legacy named colors
+    static let softRose = Color(hex: "D4939E")
     static let warmCream = Color(hex: "FFF5E6")
-    static let dustyLavender = Color(hex: "C4A4C4")
+    static let dustyLavender = Color(hex: "9B7A9B")
     static let offWhite = Color(hex: "FFFAF5")
     static let warmCharcoal = Color(hex: "4A4045")
-    static let softGold = Color(hex: "D4AF37")
+    static let softGold = Color(hex: "B8941F")
 
-    static let excellent = Color(hex: "7CB342")
-    static let good = Color(hex: "9CCC65")
-    static let neutral = Color(hex: "FFB74D")
-    static let challenging = Color(hex: "FF8A65")
-    static let difficult = Color(hex: "E57373")
+    // MARK: - Score Colors (Meet contrast requirements)
+    static let excellent = Color(hex: "558B2F")     // Darker green
+    static let good = Color(hex: "7CB342")
+    static let neutral = Color(hex: "E65100")       // Darker orange
+    static let challenging = Color(hex: "E64A19")   // Darker orange-red
+    static let difficult = Color(hex: "C62828")     // Darker red
 
-    static let fire = Color(hex: "FF7043")
-    static let earth = Color(hex: "8D6E63")
-    static let air = Color(hex: "4FC3F7")
-    static let water = Color(hex: "5C6BC0")
+    // MARK: - Element Colors
+    static let fire = Color(hex: "E64A19")
+    static let earth = Color(hex: "5D4037")
+    static let air = Color(hex: "0277BD")
+    static let water = Color(hex: "3949AB")
 
+    // MARK: - Gradients
     static let gradientStart = Color(hex: "FFE4E8")
     static let gradientEnd = Color(hex: "E8D4F0")
 
@@ -45,6 +59,8 @@ struct CosmicColors {
         )
     }
 
+    // MARK: - Score Color Helper
+
     static func scoreColor(for score: Double) -> Color {
         switch score {
         case 8.5...10: return excellent
@@ -52,6 +68,17 @@ struct CosmicColors {
         case 5...6.99: return neutral
         case 3...4.99: return challenging
         default: return difficult
+        }
+    }
+
+    /// Returns a text-safe version of the score color (darker for better contrast)
+    static func scoreTextColor(for score: Double) -> Color {
+        switch score {
+        case 8.5...10: return Color(hex: "33691E") // Dark green
+        case 7...8.49: return Color(hex: "558B2F")
+        case 5...6.99: return Color(hex: "BF360C") // Dark orange
+        case 3...4.99: return Color(hex: "BF360C")
+        default: return Color(hex: "B71C1C")       // Dark red
         }
     }
 
@@ -64,6 +91,8 @@ struct CosmicColors {
         }
     }
 }
+
+// MARK: - Color Extension
 
 extension Color {
     init(hex: String) {

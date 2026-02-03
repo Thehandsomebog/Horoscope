@@ -66,6 +66,7 @@ struct BirthDataInputView: View {
             Image(systemName: "moon.stars.fill")
                 .font(.system(size: 48))
                 .foregroundColor(CosmicColors.cosmicGold)
+                .accessibilityHidden(true)
 
             Text("Tell us about you")
                 .font(CosmicTypography.title2)
@@ -73,7 +74,7 @@ struct BirthDataInputView: View {
 
             Text("Your birth data helps us calculate your unique cosmic profile")
                 .font(CosmicTypography.subheadline)
-                .foregroundColor(CosmicColors.text.opacity(0.7))
+                .foregroundColor(CosmicColors.textSecondary)
                 .multilineTextAlignment(.center)
         }
         .padding(.bottom, 8)
@@ -142,7 +143,7 @@ struct BirthDataInputView: View {
             } else {
                 Text("Birth time is optional but helps calculate your rising sign for more accurate readings.")
                     .font(CosmicTypography.caption)
-                    .foregroundColor(CosmicColors.text.opacity(0.6))
+                    .foregroundColor(CosmicColors.textSecondary)
             }
         }
     }
@@ -158,6 +159,7 @@ struct BirthDataInputView: View {
                     Image(systemName: "mappin.circle")
                         .foregroundColor(CosmicColors.accent)
                         .frame(width: 24)
+                        .accessibilityHidden(true)
 
                     TextField("Search city or town", text: $locationQuery)
                         .font(CosmicTypography.body)
@@ -165,10 +167,13 @@ struct BirthDataInputView: View {
                         .onChange(of: locationQuery) { _, newValue in
                             locationService.searchLocations(query: newValue)
                         }
+                        .accessibilityLabel("Birth location search")
+                        .accessibilityHint("Enter a city or town name to search")
 
                     if locationService.isSearching {
                         ProgressView()
                             .scaleEffect(0.8)
+                            .accessibilityLabel("Searching locations")
                     }
                 }
                 .padding()
@@ -213,6 +218,7 @@ struct BirthDataInputView: View {
                     HStack {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(CosmicColors.good)
+                            .accessibilityHidden(true)
 
                         Text(selected.name)
                             .font(CosmicTypography.subheadline)
@@ -227,8 +233,12 @@ struct BirthDataInputView: View {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(CosmicColors.text.opacity(0.5))
                         }
+                        .accessibilityLabel("Clear selected location")
+                        .accessibilityHint("Removes the selected location so you can search again")
                     }
                     .padding(.top, 8)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("Selected location: \(selected.name)")
                 }
             }
         }
@@ -240,6 +250,8 @@ struct BirthDataInputView: View {
         }
         .opacity(isFormValid ? 1.0 : 0.5)
         .disabled(!isFormValid)
+        .accessibilityLabel("Calculate My Chart")
+        .accessibilityHint(isFormValid ? "Calculates your birth chart based on the entered data" : "Enter your name and select a birth location to continue")
     }
 }
 

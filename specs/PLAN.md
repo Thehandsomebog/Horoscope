@@ -65,7 +65,7 @@ All core functionality is implemented and working.
 - [ ] Add theme toggle (light/dark)
 
 ### General
-- [ ] Accessibility audit (VoiceOver, Dynamic Type)
+- [x] Accessibility audit (VoiceOver, Dynamic Type) - **DONE**
 - [ ] Add haptic feedback throughout
 - [ ] Dark mode support
 

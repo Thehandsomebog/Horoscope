@@ -39,6 +39,8 @@ struct DayDetailView: View {
                         dismiss()
                     }
                     .foregroundColor(CosmicColors.primary)
+                    .accessibilityLabel("Done")
+                    .accessibilityHint("Closes the day detail view")
                 }
             }
         }
@@ -62,7 +64,7 @@ struct DayDetailView: View {
 
                 Text("\(cosmicDay.scoreCategory.emoji) \(cosmicDay.scoreCategory.rawValue) Cosmic Day")
                     .font(CosmicTypography.subheadline)
-                    .foregroundColor(CosmicColors.text.opacity(0.7))
+                    .foregroundColor(CosmicColors.textSecondary)
             }
         }
     }
@@ -104,14 +106,14 @@ struct DayDetailView: View {
 
                     Text(cosmicDay.moonPhase.description)
                         .font(CosmicTypography.subheadline)
-                        .foregroundColor(CosmicColors.text.opacity(0.7))
+                        .foregroundColor(CosmicColors.textSecondary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Good for:")
                         .font(CosmicTypography.caption)
-                        .foregroundColor(CosmicColors.text.opacity(0.6))
+                        .foregroundColor(CosmicColors.textSecondary)
 
                     FlowLayout(spacing: 8) {
                         ForEach(cosmicDay.moonPhase.activities, id: \.self) { activity in
@@ -137,6 +139,7 @@ struct DayDetailView: View {
                 HStack {
                     Image(systemName: "arrow.uturn.backward.circle.fill")
                         .foregroundColor(CosmicColors.challenging)
+                        .accessibilityHidden(true)
 
                     Text("Active Retrogrades")
                         .font(CosmicTypography.headline)
@@ -149,7 +152,8 @@ struct DayDetailView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             Text(planet.symbol)
-                                .font(CosmicTypography.planetSymbol)
+                                .font(CosmicTypography.planetSymbol())
+                                .accessibilityHidden(true)
 
                             Text("\(planet.rawValue) Retrograde")
                                 .font(CosmicTypography.bodyBold)
@@ -158,8 +162,10 @@ struct DayDetailView: View {
 
                         Text(planet.retrogradeImpact)
                             .font(CosmicTypography.caption)
-                            .foregroundColor(CosmicColors.text.opacity(0.7))
+                            .foregroundColor(CosmicColors.textSecondary)
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("\(planet.rawValue) retrograde: \(planet.retrogradeImpact)")
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(
@@ -196,12 +202,13 @@ struct DayDetailView: View {
                     ForEach(cosmicDay.planetaryPositions) { position in
                         HStack(spacing: 8) {
                             Text(position.planet.symbol)
-                                .font(CosmicTypography.planetSymbol)
+                                .font(CosmicTypography.planetSymbol())
+                                .accessibilityHidden(true)
 
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(position.planet.rawValue)
                                     .font(CosmicTypography.caption)
-                                    .foregroundColor(CosmicColors.text.opacity(0.6))
+                                    .foregroundColor(CosmicColors.textSecondary)
 
                                 Text(position.formattedPosition)
                                     .font(CosmicTypography.subheadline)
@@ -209,6 +216,8 @@ struct DayDetailView: View {
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("\(position.planet.rawValue) in \(position.formattedPosition)")
                     }
                 }
             }

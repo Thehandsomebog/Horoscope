@@ -75,10 +75,13 @@ struct SettingsView: View {
                     let birthChart = EphemerisService.shared.calculateBirthChart(for: user)
                     HStack(spacing: 8) {
                         Text(birthChart.sunSign.symbol)
+                            .accessibilityHidden(true)
                         Text(birthChart.sunSign.rawValue)
                             .font(CosmicTypography.subheadline)
-                            .foregroundColor(CosmicColors.text.opacity(0.7))
+                            .foregroundColor(CosmicColors.textSecondary)
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("Sun sign: \(birthChart.sunSign.rawValue)")
                 }
 
                 Spacer()
@@ -97,6 +100,7 @@ struct SettingsView: View {
                     Image(systemName: "bell.fill")
                         .foregroundColor(CosmicColors.accent)
                         .frame(width: 28)
+                        .accessibilityHidden(true)
 
                     Text("Notification Preferences")
                         .font(CosmicTypography.body)
@@ -107,12 +111,15 @@ struct SettingsView: View {
                     Image(systemName: "chevron.right")
                         .font(.caption)
                         .foregroundColor(CosmicColors.text.opacity(0.3))
+                        .accessibilityHidden(true)
                 }
             }
+            .accessibilityLabel("Notification Preferences")
+            .accessibilityHint("Opens notification settings")
             .listRowBackground(Color.white)
         } header: {
             Text("Notifications")
-                .foregroundColor(CosmicColors.text.opacity(0.6))
+                .foregroundColor(CosmicColors.textSecondary)
         }
     }
 
@@ -130,7 +137,7 @@ struct SettingsView: View {
             }
         } header: {
             Text("Birth Data")
-                .foregroundColor(CosmicColors.text.opacity(0.6))
+                .foregroundColor(CosmicColors.textSecondary)
         }
         .listRowBackground(Color.white)
     }
@@ -146,7 +153,7 @@ struct SettingsView: View {
 
                 Text("1.0.0")
                     .font(CosmicTypography.subheadline)
-                    .foregroundColor(CosmicColors.text.opacity(0.6))
+                    .foregroundColor(CosmicColors.textSecondary)
             }
             .listRowBackground(Color.white)
 
@@ -161,8 +168,11 @@ struct SettingsView: View {
                     Image(systemName: "arrow.up.right")
                         .font(.caption)
                         .foregroundColor(CosmicColors.accent)
+                        .accessibilityHidden(true)
                 }
             }
+            .accessibilityLabel("Privacy Policy")
+            .accessibilityHint("Opens in browser")
             .listRowBackground(Color.white)
 
             Link(destination: URL(string: "https://example.com/terms")!) {
@@ -176,12 +186,15 @@ struct SettingsView: View {
                     Image(systemName: "arrow.up.right")
                         .font(.caption)
                         .foregroundColor(CosmicColors.accent)
+                        .accessibilityHidden(true)
                 }
             }
+            .accessibilityLabel("Terms of Service")
+            .accessibilityHint("Opens in browser")
             .listRowBackground(Color.white)
         } header: {
             Text("About")
-                .foregroundColor(CosmicColors.text.opacity(0.6))
+                .foregroundColor(CosmicColors.textSecondary)
         }
     }
 
@@ -193,15 +206,18 @@ struct SettingsView: View {
                 HStack {
                     Image(systemName: "trash")
                         .frame(width: 28)
+                        .accessibilityHidden(true)
 
                     Text("Reset All Data")
                         .font(CosmicTypography.body)
                 }
             }
+            .accessibilityLabel("Reset All Data")
+            .accessibilityHint("Deletes all your birth data and settings. This cannot be undone.")
             .listRowBackground(Color.white)
         } header: {
             Text("Danger Zone")
-                .foregroundColor(CosmicColors.text.opacity(0.6))
+                .foregroundColor(CosmicColors.textSecondary)
         }
     }
 
@@ -243,7 +259,7 @@ struct InfoRow: View {
         HStack {
             Text(label)
                 .font(CosmicTypography.subheadline)
-                .foregroundColor(CosmicColors.text.opacity(0.6))
+                .foregroundColor(CosmicColors.textSecondary)
 
             Spacer()
 
@@ -251,6 +267,8 @@ struct InfoRow: View {
                 .font(CosmicTypography.body)
                 .foregroundColor(CosmicColors.text)
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(label): \(value)")
     }
 }
 

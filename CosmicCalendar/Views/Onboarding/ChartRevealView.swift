@@ -50,6 +50,7 @@ struct ChartRevealView: View {
                     .font(.system(size: 40))
                     .foregroundColor(CosmicColors.cosmicGold)
             }
+            .accessibilityHidden(true)
             .onAppear {
                 withAnimation(.linear(duration: 2.5)) {
                     animationProgress = 1.0
@@ -62,7 +63,7 @@ struct ChartRevealView: View {
 
             Text("Analyzing planetary positions at the moment of your birth")
                 .font(CosmicTypography.subheadline)
-                .foregroundColor(CosmicColors.text.opacity(0.7))
+                .foregroundColor(CosmicColors.textSecondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
         }
@@ -136,6 +137,7 @@ struct ChartRevealView: View {
                     Image(systemName: elementIcon(chart.dominantElement))
                         .font(.system(size: 32))
                         .foregroundColor(CosmicColors.elementColor(for: chart.dominantElement))
+                        .accessibilityHidden(true)
 
                     VStack(alignment: .leading, spacing: 4) {
                         Text(chart.dominantElement.rawValue)
@@ -144,11 +146,13 @@ struct ChartRevealView: View {
 
                         Text(chart.dominantElement.description)
                             .font(CosmicTypography.caption)
-                            .foregroundColor(CosmicColors.text.opacity(0.7))
+                            .foregroundColor(CosmicColors.textSecondary)
                     }
                 }
             }
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Dominant Element: \(chart.dominantElement.rawValue). \(chart.dominantElement.description)")
     }
 
     private var continueButton: some View {
@@ -156,6 +160,8 @@ struct ChartRevealView: View {
             saveUserAndContinue()
         }
         .padding(.top, 16)
+        .accessibilityLabel("Start Your Cosmic Journey")
+        .accessibilityHint("Saves your birth data and takes you to the main app")
     }
 
     private func calculateChart() {
@@ -226,18 +232,20 @@ struct SignRevealCard: View {
                         .frame(width: 60, height: 60)
 
                     Text(sign.symbol)
-                        .font(CosmicTypography.zodiacSymbol)
+                        .font(CosmicTypography.zodiacSymbol())
                 }
+                .accessibilityHidden(true)
 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
                         Image(systemName: icon)
                             .font(.caption)
                             .foregroundColor(CosmicColors.cosmicGold)
+                            .accessibilityHidden(true)
 
                         Text(title)
                             .font(CosmicTypography.caption)
-                            .foregroundColor(CosmicColors.text.opacity(0.6))
+                            .foregroundColor(CosmicColors.textSecondary)
                     }
 
                     Text(sign.rawValue)
@@ -246,12 +254,14 @@ struct SignRevealCard: View {
 
                     Text(description)
                         .font(CosmicTypography.caption)
-                        .foregroundColor(CosmicColors.text.opacity(0.7))
+                        .foregroundColor(CosmicColors.textSecondary)
                 }
 
                 Spacer()
             }
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(title): \(sign.rawValue). \(description)")
     }
 }
 

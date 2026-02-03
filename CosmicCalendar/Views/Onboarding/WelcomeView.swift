@@ -67,7 +67,9 @@ struct WelcomeView: View {
                                 showBirthDataInput = true
                             }
                             .font(CosmicTypography.subheadline)
-                            .foregroundColor(CosmicColors.text.opacity(0.6))
+                            .foregroundColor(CosmicColors.textSecondary)
+                            .accessibilityLabel("Skip introduction")
+                            .accessibilityHint("Skips remaining introduction pages and goes to birth data input")
                         }
                     }
                     .padding(.bottom, 40)
@@ -98,6 +100,7 @@ struct WelcomePageView: View {
                     .font(.system(size: 64))
                     .foregroundColor(CosmicColors.cosmicGold)
             }
+            .accessibilityHidden(true)
 
             VStack(spacing: 16) {
                 Text(title)
@@ -107,7 +110,7 @@ struct WelcomePageView: View {
 
                 Text(description)
                     .font(CosmicTypography.body)
-                    .foregroundColor(CosmicColors.text.opacity(0.8))
+                    .foregroundColor(CosmicColors.textSecondary)
                     .multilineTextAlignment(.center)
                     .lineSpacing(4)
             }
@@ -132,6 +135,8 @@ struct PageIndicator: View {
                     .animation(.easeInOut(duration: 0.2), value: currentPage)
             }
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Page \(currentPage + 1) of \(totalPages)")
     }
 }
 

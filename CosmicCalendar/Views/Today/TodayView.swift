@@ -61,7 +61,7 @@ struct TodayView: View {
             if let user = user {
                 Text("Welcome back, \(user.name)")
                     .font(CosmicTypography.subheadline)
-                    .foregroundColor(CosmicColors.text.opacity(0.7))
+                    .foregroundColor(CosmicColors.textSecondary)
             }
 
             Text(formattedDate)
@@ -96,7 +96,7 @@ struct TodayView: View {
 
                     Text(day.moonPhase.description)
                         .font(CosmicTypography.caption)
-                        .foregroundColor(CosmicColors.text.opacity(0.7))
+                        .foregroundColor(CosmicColors.textSecondary)
                         .lineLimit(2)
                 }
 
@@ -126,6 +126,7 @@ struct TodayView: View {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundColor(CosmicColors.challenging)
+                        .accessibilityHidden(true)
 
                     Text("Retrograde Alert")
                         .font(CosmicTypography.headline)
@@ -138,12 +139,15 @@ struct TodayView: View {
                     ForEach(retrogrades, id: \.rawValue) { planet in
                         HStack(spacing: 8) {
                             Text(planet.symbol)
-                                .font(CosmicTypography.planetSymbol)
+                                .font(CosmicTypography.planetSymbol())
+                                .accessibilityHidden(true)
 
                             Text("\(planet.rawValue) is retrograde")
                                 .font(CosmicTypography.subheadline)
-                                .foregroundColor(CosmicColors.text.opacity(0.8))
+                                .foregroundColor(CosmicColors.textSecondary)
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("\(planet.rawValue) is retrograde")
                     }
                 }
             }

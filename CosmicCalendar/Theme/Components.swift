@@ -1,5 +1,7 @@
 import SwiftUI
 
+// MARK: - Cosmic Card
+
 struct CosmicCard<Content: View>: View {
     let content: Content
 
@@ -18,10 +20,13 @@ struct CosmicCard<Content: View>: View {
     }
 }
 
+// MARK: - Cosmic Button
+
 struct CosmicButton: View {
     let title: String
     let action: () -> Void
     var style: ButtonStyle = .primary
+    var accessibilityHint: String?
 
     enum ButtonStyle {
         case primary
@@ -63,8 +68,11 @@ struct CosmicButton: View {
                         )
                 )
         }
+        .accessibilityHint(accessibilityHint ?? "")
     }
 }
+
+// MARK: - Cosmic Text Field
 
 struct CosmicTextField: View {
     let placeholder: String
@@ -77,6 +85,7 @@ struct CosmicTextField: View {
                 Image(systemName: icon)
                     .foregroundColor(CosmicColors.accent)
                     .frame(width: 24)
+                    .accessibilityHidden(true) // Decorative icon
             }
 
             TextField(placeholder, text: $text)
@@ -90,6 +99,8 @@ struct CosmicTextField: View {
         )
     }
 }
+
+// MARK: - Score Badge
 
 struct ScoreBadge: View {
     let score: Double
@@ -110,8 +121,18 @@ struct ScoreBadge: View {
             switch self {
             case .small: return CosmicTypography.headline
             case .medium: return CosmicTypography.title2
-            case .large: return CosmicTypography.cosmicScore
+            case .large: return CosmicTypography.cosmicScore()
             }
+        }
+    }
+
+    private var scoreCategory: String {
+        switch score {
+        case 8.5...10: return "excellent"
+        case 7...8.49: return "good"
+        case 5...6.99: return "neutral"
+        case 3...4.99: return "challenging"
+        default: return "difficult"
         }
     }
 
@@ -125,11 +146,16 @@ struct ScoreBadge: View {
 
             Text(String(format: "%.1f", score))
                 .font(size.font)
-                .foregroundColor(CosmicColors.scoreColor(for: score))
+                .foregroundColor(CosmicColors.scoreTextColor(for: score))
+                .minimumScaleFactor(0.7)
         }
         .frame(width: size.dimension, height: size.dimension)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Score: \(String(format: "%.1f", score)) out of 10, \(scoreCategory)")
     }
 }
+
+// MARK: - Moon Phase View
 
 struct MoonPhaseView: View {
     let phase: MoonPhase
@@ -138,8 +164,11 @@ struct MoonPhaseView: View {
     var body: some View {
         Text(phase.symbol)
             .font(.system(size: size))
+            .accessibilityLabel("Moon phase: \(phase.rawValue)")
     }
 }
+
+// MARK: - Planet Badge
 
 struct PlanetBadge: View {
     let planet: Planet
@@ -148,12 +177,14 @@ struct PlanetBadge: View {
     var body: some View {
         HStack(spacing: 4) {
             Text(planet.symbol)
-                .font(CosmicTypography.planetSymbol)
+                .font(CosmicTypography.planetSymbol())
+                .accessibilityHidden(true) // Symbol is decorative
 
             if isRetrograde {
                 Text("R")
                     .font(CosmicTypography.caption)
                     .foregroundColor(CosmicColors.challenging)
+                    .accessibilityHidden(true)
             }
         }
         .padding(.horizontal, 8)
@@ -162,8 +193,12 @@ struct PlanetBadge: View {
             Capsule()
                 .fill(isRetrograde ? CosmicColors.challenging.opacity(0.2) : CosmicColors.secondary)
         )
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(planet.rawValue)\(isRetrograde ? ", retrograde" : "")")
     }
 }
+
+// MARK: - Zodiac Badge
 
 struct ZodiacBadge: View {
     let sign: ZodiacSign
@@ -171,7 +206,8 @@ struct ZodiacBadge: View {
     var body: some View {
         HStack(spacing: 6) {
             Text(sign.symbol)
-                .font(CosmicTypography.zodiacSymbol)
+                .font(CosmicTypography.zodiacSymbol())
+                .accessibilityHidden(true) // Symbol is decorative
 
             Text(sign.rawValue)
                 .font(CosmicTypography.caption)
@@ -183,8 +219,12 @@ struct ZodiacBadge: View {
             Capsule()
                 .fill(CosmicColors.elementColor(for: sign.element).opacity(0.2))
         )
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(sign.rawValue), \(sign.element.rawValue) sign")
     }
 }
+
+// MARK: - Domain Score Row
 
 struct DomainScoreRow: View {
     let domain: LifeDomain
@@ -195,6 +235,7 @@ struct DomainScoreRow: View {
             Image(systemName: domain.icon)
                 .foregroundColor(CosmicColors.accent)
                 .frame(width: 24)
+                .accessibilityHidden(true) // Icon is decorative, text provides meaning
 
             Text(domain.rawValue)
                 .font(CosmicTypography.body)
@@ -205,16 +246,24 @@ struct DomainScoreRow: View {
             ScoreBadge(score: score, size: .small)
         }
         .padding(.vertical, 8)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(domain.rawValue): \(String(format: "%.1f", score)) out of 10")
     }
 }
+
+// MARK: - Recommendation Card
 
 struct RecommendationCard: View {
     let recommendation: Recommendation
 
+    private var typeLabel: String {
+        recommendation.isPositive ? "Opportunity" : "Challenge"
+    }
+
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: recommendation.domain.icon)
-                .font(.system(size: 20))
+            Image(systemName: recommendation.isPositive ? "plus.circle.fill" : "exclamationmark.circle.fill")
+                .font(.title3)
                 .foregroundColor(recommendation.isPositive ? CosmicColors.good : CosmicColors.challenging)
                 .frame(width: 32, height: 32)
                 .background(
@@ -223,6 +272,7 @@ struct RecommendationCard: View {
                               ? CosmicColors.good.opacity(0.2)
                               : CosmicColors.challenging.opacity(0.2))
                 )
+                .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(recommendation.title)
@@ -231,8 +281,9 @@ struct RecommendationCard: View {
 
                 Text(recommendation.description)
                     .font(CosmicTypography.subheadline)
-                    .foregroundColor(CosmicColors.text.opacity(0.7))
-                    .lineLimit(3)
+                    .foregroundColor(CosmicColors.textSecondary)
+                    .lineLimit(4)
+                    .minimumScaleFactor(0.9)
             }
         }
         .padding()
@@ -240,8 +291,12 @@ struct RecommendationCard: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color.white)
         )
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(typeLabel) for \(recommendation.domain.rawValue): \(recommendation.title). \(recommendation.description)")
     }
 }
+
+// MARK: - Loading View
 
 struct LoadingView: View {
     var message: String = "Loading..."
@@ -251,15 +306,20 @@ struct LoadingView: View {
             ProgressView()
                 .scaleEffect(1.5)
                 .tint(CosmicColors.primary)
+                .accessibilityLabel("Loading")
 
             Text(message)
                 .font(CosmicTypography.subheadline)
-                .foregroundColor(CosmicColors.text.opacity(0.7))
+                .foregroundColor(CosmicColors.textSecondary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(CosmicColors.background)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(message)
     }
 }
+
+// MARK: - Constellation Background
 
 struct ConstellationBackground: View {
     var body: some View {
@@ -279,5 +339,21 @@ struct ConstellationBackground: View {
                 }
             }
         }
+        .accessibilityHidden(true) // Purely decorative background
+    }
+}
+
+// MARK: - Accessibility Helpers
+
+extension View {
+    /// Marks an element as decorative (hidden from accessibility)
+    func decorative() -> some View {
+        self.accessibilityHidden(true)
+    }
+
+    /// Combines children into a single accessibility element with a custom label
+    func accessibilityGroup(_ label: String) -> some View {
+        self.accessibilityElement(children: .combine)
+            .accessibilityLabel(label)
     }
 }
