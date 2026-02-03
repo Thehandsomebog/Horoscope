@@ -35,7 +35,9 @@
 		A1000027233456780000000A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000027233456780000001A /* ContentView.swift */; };
 		A1000028233456780000000A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000028233456780000001A /* LocationService.swift */; };
 		A1000029233456780000000A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000029233456780000001A /* MainTabView.swift */; };
+		A1000030233456780000000A /* CrashReportingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000030233456780000001A /* CrashReportingService.swift */; };
 		A2000001233456780000000A /* CosmicScoreCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001233456780000001A /* CosmicScoreCalculatorTests.swift */; };
+		A2000012233456780000000A /* CrashReportingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012233456780000001A /* CrashReportingServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		A1000029233456780000001A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		A2000000233456780000001A /* CosmicCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmicCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2000001233456780000001A /* CosmicScoreCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicScoreCalculatorTests.swift; sourceTree = "<group>"; };
+		A1000030233456780000001A /* CrashReportingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportingService.swift; sourceTree = "<group>"; };
+		A2000012233456780000001A /* CrashReportingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportingServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A2000001233456780000001A /* CosmicScoreCalculatorTests.swift */,
+				A2000012233456780000001A /* CrashReportingServiceTests.swift */,
 			);
 			path = CosmicCalendarTests;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				A1000010233456780000001A /* RecommendationEngine.swift */,
 				A1000011233456780000001A /* NotificationService.swift */,
 				A1000028233456780000001A /* LocationService.swift */,
+				A1000030233456780000001A /* CrashReportingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				A1000027233456780000000A /* ContentView.swift in Sources */,
 				A1000028233456780000000A /* LocationService.swift in Sources */,
 				A1000029233456780000000A /* MainTabView.swift in Sources */,
+				A1000030233456780000000A /* CrashReportingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2000001233456780000000A /* CosmicScoreCalculatorTests.swift in Sources */,
+				A2000012233456780000000A /* CrashReportingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

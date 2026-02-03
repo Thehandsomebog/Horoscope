@@ -72,13 +72,12 @@ struct SettingsView: View {
                         .font(CosmicTypography.headline)
                         .foregroundColor(CosmicColors.text)
 
-                    if let birthChart = EphemerisService.shared.calculateBirthChart(for: user) {
-                        HStack(spacing: 8) {
-                            Text(birthChart.sunSign.symbol)
-                            Text(birthChart.sunSign.rawValue)
-                                .font(CosmicTypography.subheadline)
-                                .foregroundColor(CosmicColors.text.opacity(0.7))
-                        }
+                    let birthChart = EphemerisService.shared.calculateBirthChart(for: user)
+                    HStack(spacing: 8) {
+                        Text(birthChart.sunSign.symbol)
+                        Text(birthChart.sunSign.rawValue)
+                            .font(CosmicTypography.subheadline)
+                            .foregroundColor(CosmicColors.text.opacity(0.7))
                     }
                 }
 

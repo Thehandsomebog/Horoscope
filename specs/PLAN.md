@@ -144,7 +144,7 @@ All core functionality is implemented and working.
 | Ephemeris accuracy | Medium | Using simplified fallback calculations (SwissEphemeris removed) |
 | No score caching | Low | Recalculates on every view appear |
 | No analytics | Medium | Need to track usage for iteration |
-| No crash reporting | High | Add before launch |
+| ~~No crash reporting~~ | ~~High~~ | **DONE** - CrashReportingService added with Firebase Crashlytics support |
 
 ---
 
